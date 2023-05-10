@@ -49,7 +49,7 @@ const getLinks = (req, res) => {
       pool.query(
 
       )} else {
-        response.status(403).sned("server is expect data object with a name and URL paramet")
+        response.status(403).sned("server is expect data object with a name and url paramet")
       }
     
   

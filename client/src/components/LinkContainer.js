@@ -7,15 +7,15 @@ const LinkContainer = (props) => {
   const [favLinks, setFavLinks] = useState([
     {
       name: 'Google',
-      URL: 'https://www.google.com',
+      url: 'https://www.google.com',
     },
     {
       name: 'Facebook',
-      URL: 'https://www.facebook.com',
+      url: 'https://www.facebook.com',
     },
     {
       name: 'Twitter',
-      URL: 'https://www.twitter.com',
+      url: 'https://www.twitter.com',
     },
   ])
 
@@ -34,7 +34,7 @@ const LinkContainer = (props) => {
     const postLinks = async () =>{
     let testLink = {
       name: 'Test',
-      URL: 'text.com',
+      url: 'text.com',
     }
     try {
       let response = await fetch('/links', {

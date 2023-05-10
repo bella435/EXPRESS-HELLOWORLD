@@ -7,7 +7,7 @@ const Form = (props) => {
   const handleChange = (event) => {
     if (event.target.name === 'name') {
       setLinkName(event.target.value)
-    } else if (event.target.name === 'URL') {
+    } else if (event.target.name === 'url') {
       setLinkURL(event.target.value)
     }
 
@@ -21,7 +21,7 @@ const Form = (props) => {
     event.preventDefault()
     props.handleSubmit({
       name: linkName,
-      URL: linkURL,
+      url: linkURL,
     })
 
     setLinkName('')
@@ -39,7 +39,7 @@ const Form = (props) => {
       </label>
       <label>
         URL:
-        <input type="text" name="URL" value={linkURL} onChange={handleChange} />
+        <input type="text" name="url" value={linkURL} onChange={handleChange} />
       </label>
       <button type="submit">Add</button>
       {/* TODO - Logic for returning a form element with labels and inputs for link name and URL */}
