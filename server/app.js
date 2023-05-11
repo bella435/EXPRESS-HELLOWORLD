@@ -33,9 +33,9 @@ app.get('/', (req, res) => {
 app.get('/api', (req, res) => {
     res.json({ message: "From API route server!"}); 
 });
-// app.post('/links',(req, res) => {
-//   res.send(req.body)
-// })
+app.post('/links',(req, res) => {
+  res.send(req.body)
+})
 
 //CRUD
 

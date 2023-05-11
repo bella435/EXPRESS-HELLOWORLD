@@ -31,11 +31,11 @@ const LinkContainer = (props) => {
       console.log(error)
     }
     }
-    const postLinks = async () =>{
-    let testLink = {
-      name: 'Test',
-      url: 'text.com',
-    }
+    const postLinks = async (testLink) =>{
+    // let testLink = {
+    //   name: 'Test',
+    //   url: 'text.com',
+    // }
     try {
       let response = await fetch('/links', {
         method: 'POST',
@@ -67,8 +67,10 @@ const LinkContainer = (props) => {
   }
 
   const handleSubmit = (favLink) => {
-    setFavLinks([...favLinks, favLink])
+    //setFavLinks([...favLinks, favLink])
     postLinks(favLink)
+
+    fetchLinks()
     /*
             TODO - Create logic to set state and add new favLink to favLinks array in state
         */
