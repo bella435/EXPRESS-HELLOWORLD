@@ -41,13 +41,13 @@ app.post('/links',(req, res) => {
 
 // READ - get data from db
    app.get('/links', db.getLinks)
-  // app.get('/links/:id', db.getLinksById)
+   app.get('/links/:id', db.getLinksById)
 // CREATE - add data to db
    app.post('/links', db.createLinks)
-// UPDATE - update data in db
-  // app.put('/links/:id', db.updateLinks)
+   //UPDATE - update data in db
+   app.put('/links/:id', db.updateLinks)
 // DELETE - remove data from db
-  // app.delete('/links/:id', db.deleteLinks)
+   app.delete('/links/:id', db.deleteLinks)
 
 
 

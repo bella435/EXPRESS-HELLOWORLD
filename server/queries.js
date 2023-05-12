@@ -31,16 +31,16 @@ const getLinks = (req, res) => {
 //   // Delete link in the db
 
 
-  // const getLinksById = (request, response) => {
-  //   const id = parseInt(request.params.id)
+  const getLinksById = (request, response) => {
+    const id = parseInt(request.params.id)
   
-  //   pool.query('SELECT * FROM links WHERE id = $1', [id], (error, results) => {
-  //     if (error) {
-  //       throw error
-  //     }
-  //     response.status(200).json(results.rows)
-  //   })
-  // }
+    pool.query('SELECT * FROM links WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).json(results.rows)
+    })
+  }
 
   const createLinks = (request, response) => {
     const name = request.body.name
@@ -64,39 +64,39 @@ const getLinks = (req, res) => {
     },)
   }
 
-  // const updateLinks = (request, response) => {
-  //   const id = parseInt(request.params.id)
-  //   const { name, url } = request.body
+  const updateLinks = (request, response) => {
+    const id = parseInt(request.params.id)
+    const { name, url } = request.body
   
-  //   pool.query(
-  //     'UPDATE links SET name = $1, url = $2 WHERE id = $3',
-  //     [name, url, id],
-  //     (error, results) => {
-  //       if (error) {
-  //         throw error
-  //       }
-  //       response.status(200).send(`Link modified with ID: ${id}`)
-  //     }
-  //   )
-  // }
+    pool.query(
+      'UPDATE links SET name = $1, url = $2 WHERE id = $3',
+      [name, url, id],
+      (error, results) => {
+        if (error) {
+          throw error
+        }
+        response.status(200).send(`Link modified with ID: ${id}`)
+      }
+    )
+  }
 
-  // const deleteLinks = (request, response) => {
-  //   const id = parseInt(request.params.id)
+  const deleteLinks = (request, response) => {
+    const id = parseInt(request.params.id)
   
-  //   pool.query('DELETE FROM links WHERE id = $1', [id], (error, results) => {
-  //     if (error) {
-  //       throw error
-  //     }
-  //     response.status(200).send(`User deleted with ID: ${id}`)
-  //   })
-  // }
+    pool.query('DELETE FROM links WHERE id = $1', [id], (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(`User deleted with ID: ${id}`)
+    })
+  }
 
   module.exports = {
     getLinks, 
-   // getLinksById,
+   getLinksById,
     createLinks,
-    // updateLinks,
-    // deleteLinks,
+    updateLinks,
+    deleteLinks,
    }
 
   

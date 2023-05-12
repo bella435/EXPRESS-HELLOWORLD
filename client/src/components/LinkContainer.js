@@ -67,7 +67,7 @@ const LinkContainer = (props) => {
   }
 
   const handleSubmit = (favLink) => {
-    //setFavLinks([...favLinks, favLink])
+    setFavLinks([...favLinks, favLink])
     postLinks(favLink)
 
     fetchLinks()
